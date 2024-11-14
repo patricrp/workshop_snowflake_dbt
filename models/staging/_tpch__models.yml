@@ -1,0 +1,193 @@
+version: 2
+
+models:
+  - name: stg_tpch__customer
+    description: ""
+    columns:
+      - name: c_custkey
+        data_type: number
+        description: ""
+
+      - name: c_name
+        data_type: varchar
+        description: ""
+
+      - name: c_address
+        data_type: varchar
+        description: ""
+
+      - name: c_nationkey
+        data_type: number
+        description: ""
+
+      - name: c_phone
+        data_type: varchar
+        description: ""
+
+      - name: c_acctbal
+        data_type: number
+        description: ""
+
+      - name: c_mktsegment
+        data_type: varchar
+        description: ""
+
+      - name: c_comment
+        data_type: varchar
+        description: ""
+
+  - name: stg_tpch__lineitem
+    description: ""
+    columns:
+      - name: l_orderkey
+        data_type: number
+        description: ""
+        tests:
+          - relationships:
+              to: ref('stg_tpch__orders')
+              field: o_orderkey
+
+      - name: l_partkey
+        data_type: number
+        description: ""
+
+      - name: l_suppkey
+        data_type: number
+        description: ""
+
+      - name: l_linenumber
+        data_type: number
+        description: ""
+
+      - name: l_quantity
+        data_type: number
+        description: ""
+
+      - name: l_extendedprice
+        data_type: number
+        description: ""
+
+      - name: l_discount
+        data_type: number
+        description: ""
+
+      - name: l_tax
+        data_type: number
+        description: ""
+
+      - name: l_returnflag
+        data_type: varchar
+        description: ""
+
+      - name: l_linestatus
+        data_type: varchar
+        description: ""
+
+      - name: l_shipdate
+        data_type: date
+        description: ""
+
+      - name: l_commitdate
+        data_type: date
+        description: ""
+
+      - name: l_receiptdate
+        data_type: date
+        description: ""
+
+      - name: l_shipinstruct
+        data_type: varchar
+        description: ""
+
+      - name: l_shipmode
+        data_type: varchar
+        description: ""
+
+      - name: l_comment
+        data_type: varchar
+        description: ""
+
+  - name: stg_tpch__nation
+    description: ""
+    columns:
+      - name: n_nationkey
+        data_type: number
+        description: ""
+
+      - name: n_name
+        data_type: varchar
+        description: ""
+
+      - name: n_regionkey
+        data_type: number
+        description: ""
+
+      - name: n_comment
+        data_type: varchar
+        description: ""
+
+  - name: stg_tpch__orders
+    description: ""
+    columns:
+      - name: o_orderkey
+        data_type: number
+        description: ""
+
+      - name: o_custkey
+        data_type: number
+        description: ""
+
+      - name: o_orderstatus
+        data_type: varchar
+        description: ""
+
+      - name: o_totalprice
+        data_type: number
+        description: ""
+
+      - name: o_orderdate
+        data_type: date
+        description: ""
+
+      - name: o_orderpriority
+        data_type: varchar
+        description: ""
+
+      - name: o_clerk
+        data_type: varchar
+        description: ""
+
+      - name: o_shippriority
+        data_type: number
+        description: ""
+
+      - name: o_comment
+        data_type: varchar
+        description: ""
+
+  - name: stg_tpch__part
+    description: ""
+    #columns: 
+
+  - name: stg_tpch__partsupp
+    description: ""
+    #columns: 
+
+  - name: stg_tpch__region
+    description: ""
+    columns:
+      - name: r_regionkey
+        data_type: number
+        description: ""
+
+      - name: r_name
+        data_type: varchar
+        description: ""
+
+      - name: r_comment
+        data_type: varchar
+        description: ""
+
+  - name: stg_tpch__supplier
+    description: ""
+    #columns:
